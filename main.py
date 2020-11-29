@@ -1,3 +1,4 @@
+from matplotlib.pyplot import axis
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -64,3 +65,66 @@ for day in range(0, len(confirmed)):
         hospitalization_rate_estimate
 
 # Visualization
+
+# countries = ['Italy', 'Austria', 'US', 'China',
+#              'India', 'Taiwan', 'France', 'Spain']
+
+# ax = plt.subplot()
+# ax.set_facecolor('black')
+# ax.figure.set_facecolor('#121212')
+# ax.tick_params(axis='x', colors='white')
+# ax.tick_params(axis='y', colors='white')
+# ax.set_title('COVID_19 - Total Confirmed Cases By County', color='white')
+
+
+# for country in countries:
+#     confirmed[country][35:].plot(label=country)
+
+# plt.legend(loc='upper left')
+# plt.show()
+
+# countries = ['Italy', 'Germany', 'US', 'China']
+
+# for country in countries:
+#     ax = plt.subplot()
+#     ax.set_facecolor('black')
+#     ax.figure.set_facecolor('#121212')
+#     ax.tick_params(axis='x', colors='white')
+#     ax.tick_params(axis='y', colors='white')
+#     ax.set_title(
+#         f'COVID_19 - Confirmed Cases Growth Rate {country}', color='white')
+#     growth_rate[country].plot.bar()
+#     plt.show()
+
+
+# countries = ['Italy', 'Germany', 'US', 'China']
+
+# ax = plt.subplot()
+# ax.set_facecolor('black')
+# ax.figure.set_facecolor('#121212')
+# ax.tick_params(axis='x', colors='white')
+# ax.tick_params(axis='y', colors='white')
+# ax.set_title('COVID_19 - Total Deaths By County', color='white')
+
+
+# for country in countries:
+#     deaths[country].plot(label=country)
+
+# plt.legend(loc='upper left')
+# plt.show()
+
+countries = ['Italy', 'Germany', 'US', 'China', 'Spain', 'France']
+
+ax = plt.subplot()
+ax.set_facecolor('black')
+ax.figure.set_facecolor('#121212')
+ax.tick_params(axis='x', colors='white')
+ax.tick_params(axis='y', colors='white')
+ax.set_title('COVID_19 - Total Deaths By County', color='white')
+
+
+for country in countries:
+    deaths[country].plot(label=country)
+
+plt.legend(loc='upper left')
+plt.show()
