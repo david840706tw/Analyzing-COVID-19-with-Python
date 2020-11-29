@@ -49,3 +49,18 @@ for day in range(1, len(confirmed)):
         (active_cases.iloc[day] - active_cases.iloc[day - 1]) / active_cases.iloc[day - 1]) * 100
 
 print(overall_growth_rate['Taiwan'].tail(10))
+
+death_rate = confirmed.copy()
+
+for day in range(0, len(confirmed)):
+    death_rate.iloc[day] = (deaths.iloc[day] / confirmed.iloc[day]) * 100
+
+hospitalization_rate_estimate = 0.05
+
+hospitalization_needed = confirmed.copy()
+
+for day in range(0, len(confirmed)):
+    hospitalization_needed.iloc[day] = active_cases.iloc[day] * \
+        hospitalization_rate_estimate
+
+# Visualization
